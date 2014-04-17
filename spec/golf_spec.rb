@@ -3,6 +3,7 @@ require 'golf'
 
 describe "Golf" do
 
+  # keep
   describe ".hole1" do
     it "should multiply the numbers in an array" do
       expect(Golf.hole1([1,2,3,4])).to eql 24
@@ -16,14 +17,20 @@ describe "Golf" do
   end
 
   describe ".hole2" do
-    it "should sort a sentence by the second letter of each word" do
-      expect(Golf.hole2("the quick brown fox")).to eql "the fox brown quick"
+    it "should truncate words of >10 characters to exactly 10 characters" do
+      expect(Golf.hole2("triangulation").length).to eql 10
     end
-    it "should successfully sort 'jumps over the lazy dog'" do
-      expect(Golf.hole2("jumps over the lazy dog")).to eql "lazy the dog jumps over"
+
+    it "should truncate using '...' 3 charaters before the end" do
+      expect(Golf.hole2("triangulation")).to eql "tria...ion"
     end
-    it "should successfully sort 'ruby golf is great'" do
-      expect(Golf.hole2("ruby golf is great")).to eql "golf great is ruby"
+
+    it "should not alter words of 10 characters or less" do
+      expect(Golf.hole2("characters")).to eql "characters"
+    end
+
+    it "should do the above on the individual words in a sentence" do
+      expect(Golf.hole2("The congregation disliked the minister's condescending tone.")).to eql "The cong...ion disliked the minister's cond...ing tone."
     end
   end
 
@@ -70,6 +77,7 @@ describe "Golf" do
   end
 
 
+  # keep
   describe ".hole5" do
     it "should return all sub-lists of the input, sorted by length then numerically" do
       expect(Golf.hole5([1,2,3,4])).to eq(
@@ -83,6 +91,7 @@ describe "Golf" do
   end
 
 
+  # keep
   describe ".hole6" do
     it "should play fizzbuzz to 3, where multiples of 3 are 'fizz'" do
       expect(Golf.hole6(3)).to eql [1,2,"fizz"]
@@ -101,17 +110,7 @@ describe "Golf" do
     end
   end
 
-  describe ".hole7" do
-    it "should collapse consecutive numbers to a range" do
-      expect(Golf.hole7([1,2,3])).to eql ["1-3"]
-    end
-
-    it "should keep separate ranges distinct" do
-      expect(Golf.hole7([1,2,3,5,6,7,100,101])).to eql ["1-3","5-7","100-101"]
-    end
-  end
-
-
+  # keep
   describe ".hole7" do
     it "should collapse consecutive numbers to a range" do
       expect(Golf.hole7([1,2,3])).to eql ["1-3"]
@@ -142,24 +141,12 @@ describe "Golf" do
   end
 
 
+  # keep
   describe ".hole9" do
-    it "should return the winner of an AV election where winner has a first round majority" do
-      expect(Golf.hole9('fixtures/av-example1.txt')).to eql "blue"
-    end
-
-    it "should eliminate the last candidate if there is no first round majority and allocate their second choices" do
-      expect(Golf.hole9('fixtures/av-example2.txt')).to eql "red"
-    end
-
-    it "should continue to eliminate the losing candidate until a majority is reached" do
-      expect(Golf.hole9('fixtures/av-example3.txt')).to eql "blue"
-    end
-
-    it "should be the candidate with most votes if there are only two left, even witout a majority" do
-      expect(Golf.hole9('fixtures/av-example4.txt')).to eql "blue"
+    it "should return the letters of the alphabet" do
+      expect(Golf.hole9).to eql ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     end
   end
-
 
 end
 
