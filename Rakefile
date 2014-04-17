@@ -1,12 +1,11 @@
 require 'rubygems'
 require 'rake'
-require 'spec/rake/spectask'
+require 'rspec/core/rake_task'
 
 COUNT_WHITESPACE = false
 
-Spec::Rake::SpecTask.new(:spec) do |spec|
-  spec.libs << 'lib' << 'spec'
-  spec.spec_files = FileList['spec/**/*_spec.rb']
+RSpec::Core::RakeTask.new(:spec) do |spec|
+  spec.pattern = 'spec/**/*_spec.rb'
 end
 
 task :default => [:spec, :count]
@@ -18,7 +17,7 @@ task :count do
     total_characters = solution.length
     puts "-----------------------------------------------"
     puts "| Congratulations, you've completed the course."
-    puts "| Total characters: #{total_characters}        " 
+    puts "| Total characters: #{total_characters}        "
     puts "-----------------------------------------------"
   end
 end
