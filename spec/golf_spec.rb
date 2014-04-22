@@ -16,23 +16,14 @@ describe "Golf" do
     end
   end
 
+
+  # keep
   describe ".hole2" do
-    it "should truncate words of >10 characters to exactly 10 characters" do
-      expect(Golf.hole2("triangulation").length).to eql 10
-    end
-
-    it "should truncate using '...' 3 charaters before the end" do
-      expect(Golf.hole2("triangulation")).to eql "tria...ion"
-    end
-
-    it "should not alter words of 10 characters or less" do
-      expect(Golf.hole2("characters")).to eql "characters"
-    end
-
-    it "should do the above on the individual words in a sentence" do
-      expect(Golf.hole2("The congregation disliked the minister's condescending tone.")).to eql "The cong...ion disliked the minister's cond...ing tone."
+    it "should return the letters of the alphabet" do
+      expect(Golf.hole2).to eql ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     end
   end
+
 
   describe ".hole3" do
     it "should calculate the factorial of 4, i.e. 4*3*2*1" do
@@ -143,8 +134,20 @@ describe "Golf" do
 
   # keep
   describe ".hole9" do
-    it "should return the letters of the alphabet" do
-      expect(Golf.hole9).to eql ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    it "should truncate words of >10 characters to exactly 10 characters" do
+      expect(Golf.hole9("triangulation").length).to eql 10
+    end
+
+    it "should truncate using '...' 3 charaters before the end" do
+      expect(Golf.hole9("triangulation")).to eql "tria...ion"
+    end
+
+    it "should not alter words of 10 characters or less" do
+      expect(Golf.hole9("characters")).to eql "characters"
+    end
+
+    it "should do the above on the individual words in a sentence" do
+      expect(Golf.hole9("The congregation disliked the minister's condescending tone.")).to eql "The cong...ion disliked the minister's cond...ing tone."
     end
   end
 
