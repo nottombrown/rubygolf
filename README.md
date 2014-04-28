@@ -5,7 +5,7 @@
  * Ruby 2.1
  * RSpec 2.14
 
-## setup
+## Setup
 
  * Fork https://github.com/rubyhacknight/rubygolf to your own github account.
  * Clone it to your local machine
