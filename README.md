@@ -13,7 +13,7 @@
 
 ## How to play
 
-Ruby Golf is a game whereby the player is required to solve a number of problems (holes) in the fewest characters possible. The course consists of nine holes that you must implement. The holes are static methods that need to written for the Golf class (lib/golf.rb). The requirements for these methods is specified by a set of RSpec examples for each hole (spec/golf_spec.rb). To run the specs, simply run:
+Ruby Golf is a game whereby the player is required to solve a number of problems (holes) in the fewest characters possible. The course consists of nine holes that you must implement. The holes are static methods that need to be written for the Golf class (lib/golf.rb). The requirements for these methods is specified by a set of RSpec examples for each hole (spec/golf_spec.rb). To run the specs, simply run:
 
     bundle exec rake
 
